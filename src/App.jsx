@@ -1,4 +1,5 @@
 import PostPage from './pages/PostPage'
+import GlobalContext from './contexts/GlobalContext';
 
 const posts = [
   {
@@ -54,4 +55,4 @@ function App() {
   )
 }
 
-export default App
+export { App, posts }
