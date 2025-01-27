@@ -1,5 +1,5 @@
 import PostPage from './pages/PostPage'
-import GlobalContext from './contexts/GlobalContext';
+import { GlobalProvider } from './contexts/GlobalContext';
 
 const posts = [
   {
@@ -50,7 +50,9 @@ function App() {
 
   return (
     <>
-      <PostPage />
+      <GlobalProvider>
+        <PostPage />
+      </GlobalProvider>
     </>
   )
 }

@@ -1,4 +1,4 @@
-import { createContext } from 'react'
+import { createContext, useContext } from 'react'
 
 const GlobalContext = createContext();
 
@@ -10,6 +10,9 @@ const GlobalProvider = ({ children }) => {
     )
 }
 
+const useGlobalContext = () => {
+    return useContext(GlobalContext)
+}
 
 
-export default GlobalContext
+export { GlobalProvider, useGlobalContext }
