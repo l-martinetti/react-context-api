@@ -1,14 +1,21 @@
+import { useGlobalContext } from '../contexts/GlobalContext'
+
 const PostCard = () => {
+
+    const { post } = useGlobalContext();
+
     return (
         <div className="container">
-            <div className="card mx-auto">
-                {/* <img src="" className="card-img-top" alt=""> */}
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+            {post.map(post => (
+                <div key={post.id} className="card mx-auto my-3">
+                    <img src={post.image} className="card-img-top" alt={post.name} />
+                    <div className="card-body">
+                        <h5 className="card-title">{post.name}</h5>
+                        <p className="card-text">{post.description}</p>
+                    </div>
                 </div>
-            </div>
+            ))}
+
         </div>
     )
 }

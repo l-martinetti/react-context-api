@@ -5,10 +5,10 @@ const GlobalContext = createContext();
 
 const GlobalProvider = ({ children }) => {
 
-    const [posts, setPosts] = useState(posts)
+    const [post, setPost] = useState(posts)
 
     return (
-        <GlobalContext.Provider>
+        <GlobalContext.Provider value={{ post }}>
             {children}
         </GlobalContext.Provider>
     )
